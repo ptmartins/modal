@@ -1,0 +1,111 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.modal__overlay {
+    background-color: rgba(0, 0, 0, .75);
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 66px rgba(0, 0, 0, .9);
+            box-shadow: 0 0 66px rgba(0, 0, 0, .9);
+    color: #374151;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 50%;
+    line-height: 1.5;
+    max-width: 520px;
+    padding: 1.5rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.modal__header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.modal__close {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.modal__close::before,
+.modal__close::after {
+    background-color: #202124;
+    border-radius: 10px;
+    top: 50%;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__close::before {
+    -webkit-transform: translateY(-50%) rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
+}
+
+.modal__close::after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+            transform: translateY(-50%) rotate(-45deg);
+}
+
+.modal__body {
+    margin-bottom: 1.5rem;
+    opacity: .85;
+}
+
+.modal__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+.modal__btn {
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-transform: uppercase;
+}
+
+.modal__btn--kill {
+    background-color: #DC2626;
+    border-color: #DC2626;
+    color: #fff;
+}
+
+.modal--error .modal__body {
+    color: #DC2626;
+}
