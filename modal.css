@@ -17,18 +17,26 @@
 .modal {
     background-color: #fff;
     border-radius: 5px;
-    -webkit-box-shadow: 0 0 66px rgba(0, 0, 0, .9);
-            box-shadow: 0 0 66px rgba(0, 0, 0, .9);
+    -webkit-box-shadow: 0 0 66px rgba(0, 0, 0, .65);
+            box-shadow: 0 0 66px rgba(0, 0, 0, .65);
     color: #374151;
     font-family: Arial, Helvetica, sans-serif;
     left: 50%;
     line-height: 1.5;
-    max-width: 520px;
+    width: 520px;
     padding: 1.5rem;
     position: absolute;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+}
+
+.modal--image {
+    aspect-ratio: 16 / 9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
 }
 
 .modal__header {
@@ -75,6 +83,34 @@
             transform: translateY(-50%) rotate(-45deg);
 }
 
+.modal--image .modal__close {
+    background-color: #000;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 30px;
+}
+
+.modal--image .modal__close::before,
+.modal--image .modal__close::after {
+    background-color: #fff;
+    height: 4px;
+    left: 50%;
+    width: 16px;
+}
+
+.modal--image .modal__close::before {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal--image .modal__close::after {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .modal__body {
     margin-bottom: 1.5rem;
     opacity: .85;
@@ -91,13 +127,16 @@
 
 .modal__btn {
     background-color: #fff;
-    border: 1px solid #d1d5db;
+    border: 1px solid #d3d3d5; /*#d1d5db*/;
     border-radius: 6px;
     color: #374151;
+    cursor: pointer;
     font-size: 14px;
     font-weight: bold;
     padding: 8px 16px;
     text-transform: uppercase;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .modal__btn--kill {
@@ -109,3 +148,10 @@
 .modal--error .modal__body {
     color: #DC2626;
 }
+
+
+@media (hover: hover) {
+    .modal__btn:hover {
+        background-color: #d3d3d5;
+    }
+  }
