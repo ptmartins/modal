@@ -6,6 +6,8 @@
  * 
  */
 
+'use strict';
+
 (function(modal) {
     // Do modal stuff here
 
@@ -92,7 +94,7 @@
                     <button class="modal__btn modal__btn--close">Close</button>
                 </div>
          `
-        }
+        },
 
         /**
          * Render the modal
