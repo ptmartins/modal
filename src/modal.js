@@ -19,10 +19,11 @@
          * Modal default settings
          */
         defaults = {
+            animate: false,
             body: '',
             btnTxt: '',
             cbFn: null,
-            position: 'default', // default, centered,
+            closeOnEsc: false,
             size: 'm', // s, m, l
             title: '',
             type: 'content', // content, confirm, warning, error, image
@@ -39,9 +40,6 @@
                 </div>
                 <div class="modal__body">
                     ${defaults.body}
-                </div>
-                <div class="modal__footer">
-                    <button class="modal__btn modal__btn--close">Close</button>
                 </div>
             `,
             image: () => `<button class="modal__close modal__close--image"></button>`,
@@ -104,7 +102,7 @@
             DOM.modal = document.createElement('DIV');
 
             DOM.modalOverlay.className = 'modal__overlay';
-            DOM.modal.className = (`modal modal--${defaults.type} modal--${defaults.size} modal--${defaults.position}`);
+            DOM.modal.className = (`modal modal--${defaults.type} modal--${defaults.size} ${defaults.animate ? 'modal--animate' : ''}`);
 
             switch(defaults.type) {
                 case 'content':
@@ -127,7 +125,7 @@
 
             document.body.append(DOM.modalOverlay, DOM.modal);
             DOM.closeBtn = document.querySelector('.modal__close');
-            DOM.cancelBtn = document.querySelector('.modal__btn--close');
+            DOM.cancelBtn = document.querySelector('.modal__btn--close') || null;
             if(defaults.type === 'confirm') {
                 DOM.confirmBtn = document.querySelector('.modal__btn--confirm');
             }
@@ -144,6 +142,14 @@
 
             if(defaults.cbFn && defaults.type === 'confirm') {
                 DOM.confirmBtn.addEventListener('click', defaults.cbFn);
+            }
+
+            if(defaults.closeOnEsc) {
+                document.addEventListener('keydown', (ev) => {
+                    if(ev.keyCode === 27) {
+                        hide();
+                    }
+                });
             }
         },
 

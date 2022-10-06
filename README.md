@@ -26,9 +26,6 @@ Initialize the modal in your script file or an inline script tag.
 - `btnTxt` (*type String*)
     - *Optional*. 
     - Text to be displayed for the modal footer 2nd button.
-- `position` (*type String*) 
-    - *Optional*. 
-    - Modal position: `'default'` (by default) or `'centered'`.
 - `size` (*type String*)
     - *Optional*. 
     - Sets modal sizes: `'m'` (by default), `'s'` and `'l'`.
@@ -38,6 +35,9 @@ Initialize the modal in your script file or an inline script tag.
 - `type` (*type String*)
     - *Optional*. 
     - Types of Modal: `'content'` (by default), `'error'`, `'warning'`, `'image'` and `'confirm'`.
+- `closeOnEsc` (*type Boolean*)
+    - *Optional*. 
+    - Close modal when `ESC` key is pressed. Default -> `false` 
 
 ## Public methods
 - To initialize the modal
@@ -56,13 +56,6 @@ Initialize the modal in your script file or an inline script tag.
 ```javascript   
     modal.show({
         body: 'Lorem ipsum ...' // Text to show on modal body, here!
-    })
-```
-> ### Simple modal, vertically centered ##
-```javascript   
-    modal.show({
-        body: 'Lorem ipsum ...', // Text to show on modal body, here!
-        position: 'centered'
     })
 ```
 > ### Image modal
