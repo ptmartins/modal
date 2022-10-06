@@ -23,12 +23,12 @@
     font-family: Arial, Helvetica, sans-serif;
     left: 50%;
     line-height: 1.5;
-    width: 90%;
     padding: 1.5rem;
     position: absolute;
     top: 4.5rem;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    width: 90%;
 }
 
 .modal--centered {
@@ -139,7 +139,10 @@
 
 .modal__body {
     margin-bottom: 1.5rem;
+    max-height: 45vh;
     opacity: .85;
+    overflow-y: auto;
+    word-break: break-all;
 }
 
 .modal__footer {
