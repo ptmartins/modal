@@ -26,6 +26,12 @@
     width: 90%;
     padding: 1.5rem;
     position: absolute;
+    top: 4.5rem;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.modal--centered {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -50,6 +56,26 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-bottom: 1.5rem;
+}
+
+.modal__icon {
+    border-radius: 8px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    margin-right: .75rem;
+    text-align: center;
+    width: 36px;
+}
+
+.modal__icon--error {
+    background-color: #f8d6d6;
+    color: #d21414;
+}
+
+.modal__icon--alert {
+    background-color: #fad105;
+    color: #374151;
 }
 
 .modal__close {
@@ -139,20 +165,25 @@
     transition: all .2s ease-in-out;
 }
 
-.modal__btn--kill {
-    background-color: #DC2626;
-    border-color: #DC2626;
+.modal__btn--close {
+    margin-left: .375rem;
+}
+
+.modal__btn--confirm {
+    background-color: #4d36f9;
+    border-color: #4d36f9;
     color: #fff;
 }
 
-.modal--error .modal__body {
-    color: #DC2626;
-}
-
-
 @media (hover: hover) {
     .modal__btn:hover {
-        background-color: #d3d3d5;
+        background-color: #e4e4e7;
+        border-color: #e4e4e7;
+    }
+
+    .modal__btn--confirm:hover {
+        background-color: #3323ae;
+        border-color: #3323ae;    
     }
 }
 
